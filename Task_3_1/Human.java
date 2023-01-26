@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public abstract class Human {
     int id;
+    int age;
     String fn;
     String ln;
 

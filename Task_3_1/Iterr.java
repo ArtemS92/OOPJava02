@@ -9,7 +9,7 @@ class It implements Iterr{
     @Override
     public void ViewForward(Human n, String space) {
         if (n != null) {
-            System.out.printf("%s%s %s %s\n", space, n.id, n.fn, n.ln);
+            System.out.printf("%s %d %s %s %d\n", space, n.id, n.fn, n.ln, n.age);
 
             if (n.dad != null) {
                 ViewForward(n.dad, space + " ");
@@ -23,7 +23,7 @@ class It implements Iterr{
     @Override
     public void ViewReverse(Human n, StringBuilder sb, String str) {
         if (n != null) {
-            sb.append(String.format("%sid:%d fn:%s ln:%s\n", str, n.id, n.fn, n.ln));
+            sb.append(String.format("%sid:%d fn:%s ln:%s age:%d\n", str, n.id, n.fn, n.ln, n.age));
             if (!n.childs.isEmpty()) {
                 str += ' ';
                 for (Human child : n.childs) {
@@ -32,5 +32,4 @@ class It implements Iterr{
             }
         }
     }
-
 }
